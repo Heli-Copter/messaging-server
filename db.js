@@ -5,7 +5,7 @@ var database = {
         host: 'localhost',
         user: 'root',
         password: 'mysql@123',
-        database: 'pets'
+        database: 'messaging'
     }),
     connect: function () {
         this.connection.connect();
@@ -13,11 +13,9 @@ var database = {
     query: function (queryText) {
         this.connection.query(queryText, function (err, results, fields) {
             if(!err) {
-                results.map(function (result) {
-                    console.log('name: ', result.name);
-                });
+                return 'success';
             } else {
-                console.log('An error occured: ', err);
+                return 'failure';
             }
 
         })

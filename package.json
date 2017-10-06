@@ -2,6 +2,8 @@
   "name": "messaging-server",
   "version": "1.0.0",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.1",
     "mysql": "^2.14.1"
   }
