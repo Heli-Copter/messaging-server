@@ -2,6 +2,8 @@ const express = require('express');
 var db = require('./db');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var fs = require('fs');
+var https = require('https');
 
 
 var app = express();
@@ -17,12 +19,16 @@ app.get('/', function (req, res) {
 });
 app.post('/signup', function (req, res) {
     //db.connect();
-    var response = db.query("INSERT INTO user (first_name, last_name, mobile, password, is_active, is_enabled) VALUES ('" + req.body.firstName + "', '" + req.body.lastName + "', " + req.body.mobile + ", '" + req.body.password + "', 1, 1);");
+    var response = db.query("INSERT INTO user (first_name, last_name, email, mobile, password, is_active, is_enabled) VALUES ('" + req.body.firstName + "', '" + req.body.lastName + "', '" + req.body.email + "', " + req.body.mobile + ", '" + req.body.password + "', 1, 1);");
     //db.end();
-    response === 'success' && res.sendStatus(200);
-    response === 'failure' && res.sendStatus(400);
+
 });
 
-app.listen(3001, function () {
-    console.log('Running express server at localhost:3001');
+app.all('/_status', function (req, res) {
+    res.sendStatus(200);
 });
+
+https.createServer({
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+}, app).listen(3001);

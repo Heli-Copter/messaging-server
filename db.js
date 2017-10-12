@@ -12,11 +12,6 @@ var database = {
     },
     query: function (queryText) {
         this.connection.query(queryText, function (err, results, fields) {
-            if(!err) {
-                return 'success';
-            } else {
-                return 'failure';
-            }
 
         })
     },

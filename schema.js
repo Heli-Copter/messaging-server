@@ -9,6 +9,7 @@
             id INT NOT NULL UNIQUE,
             name VARCHAR(100) NOT NULL,
             mobile INT NOT NULL UNIQUE,
+            email VARCHAR(40) NOT NULL UNIQUE,
             password VARCHAR(100),
             is_active TINYINT(1),
             is_enabled TINYINT(1),
