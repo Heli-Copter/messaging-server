@@ -27,6 +27,7 @@ module.exports = {
 		if(!req.body.firstName){
 			return next(new APIError('NO_EMF'));
 		}
+		//TODO: Sanity checks for user details. One sample is done above for firstName
 		var userDetails = {
 			first_name : req.body.firstName,
 			last_name : req.body.lastName,
