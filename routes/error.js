@@ -6,7 +6,7 @@ var env = process.env.NODE_ENV || 'development';
     
 module.exports = function(err, req, res, next) {
 
-  console.log('Received error::: ', err);
+  // console.log('Received error::: ', err);
 
   if (err) {
     var response = {};
