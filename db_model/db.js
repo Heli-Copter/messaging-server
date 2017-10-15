@@ -20,8 +20,9 @@ var database = {
     },
     query: function (queryText, cb) {
         this.connection.query(queryText, function (err, results) {
-            if(err){return cb(err);}
-            console.log(results);
+            if(err) {
+                return cb(err);
+            }
             return cb(null, results);
         })
     },
