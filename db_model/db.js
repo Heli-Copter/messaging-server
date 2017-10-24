@@ -6,7 +6,7 @@ var database = {
     connection : mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'paytm@197',//'mysql@123',
+        password: 'mysql@123',//'mysql@123',
         database: 'messaging'
     }),
     connect: function () {

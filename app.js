@@ -2,7 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var fs = require('fs');
-var https = require('https');
+var http = require('http');
 
 var routes = require('./routes');
 
@@ -16,10 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 routes(app);
 
-https.createServer({
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-}, app)
+http.createServer(app)
 .on('error',function(err) {
   console.log("[Error] ", err);
   process.exit(1);
