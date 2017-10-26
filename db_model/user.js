@@ -10,7 +10,15 @@ var user = {
             if(e){return cb(e);}
             cb(null, r);
         });
-    } 
+    } ,
+    validateUser: function (userDetails, cb) {
+    	console.log("Authenticating user with details: ", userDetails);
+    	var dbQuery = "SELECT * FROM user WHERE '" + userDetails.userID + "' IN(email, mobile);";
+        db.query(dbQuery, function(e,r){
+            if(e){return cb(e);}
+            cb(null, r);
+        });
+    }
 };
 
 module.exports = user;
