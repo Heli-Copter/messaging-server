@@ -18,6 +18,14 @@ var user = {
             if(e){return cb(e);}
             cb(null, r);
         });
+    },
+    disableUser : function (userDetails, cb) {
+        var dbQuery = "UPDATE user SET is_enabled= '" + 0 + "' WHERE email= '" + userDetails.email + "'";
+        console.log(dbQuery)
+        db.query(dbQuery, function(e,r){
+            if(e) { return cb(e); }
+            cb(null, r);
+        });
     }
 };
 
