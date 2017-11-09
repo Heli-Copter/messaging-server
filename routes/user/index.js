@@ -86,5 +86,7 @@ module.exports = {
 				return cb(null, result);
 			});
 		}
-	}
+	},
+	
+	forgotPassword : function (req, res, next) {}
 };
