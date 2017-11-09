@@ -12,5 +12,7 @@ module.exports = function(app) {
 	app.post('/signup', user.userSignUp, respond, error);
 
 	app.post('/login', user.userLogin, respond, error);
+	
+	app.post('/forgotPassword', user.forgotPassword, respond, error);
 
 };
