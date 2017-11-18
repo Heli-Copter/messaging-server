@@ -26,6 +26,13 @@ var user = {
             if(e) { return cb(e); }
             cb(null, r);
         });
+    },
+    isEmailAvailable: function (userDetails, cb) {
+        var dbQuery = "SELECT id, email FROM user WHERE email= '" + userDetails.email + "'";
+        db.query(dbQuery, function(e,r){
+            if(e) { return cb(e); }
+            cb(null, r);
+        });
     }
 };
 
