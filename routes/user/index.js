@@ -49,7 +49,7 @@ module.exports = {
 
 		async.waterfall([_setData, _signUpUser], function (err, resp) {
 			if (err) {
-				return next(new APIError('NO_BODY_FE'));
+				return next(new APIError('NO_BODY_FE_US'));
 			} else {
 				req.sendResult = resp;
 				return next();
