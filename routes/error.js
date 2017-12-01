@@ -3,8 +3,8 @@
 var util = require('util');
 
 var env = process.env.NODE_ENV || 'development';
-    
-module.exports = function(err, req, res, next) {
+
+module.exports = function (err, req, res, next) {
 
   // console.log('Received error::: ', err);
 
@@ -18,13 +18,13 @@ module.exports = function(err, req, res, next) {
     console.log("[Error] url # " + req.url + ", message: " + response.error + " , code: " + response.errorCode);
 
     if (env == 'production') {
-        if (code == 500) {
+      if (code == 500) {
         console.log(err.stack.split('\n'));
         response.error = response.status.message.message = 'An unexpected error has occured';
-        }
+      }
     } else {
-        response.stack = err.stack.split('\n');
-        console.log(err.stack.split('\n'));
+      response.stack = err.stack.split('\n');
+      console.log(err.stack.split('\n'));
     }
   }
   res.status(httpStatusCode).json(response);
