@@ -1,6 +1,6 @@
+<img src="icon.png" align="right" />
+
 # messaging-server
-
-
 
 Intent:  
 
