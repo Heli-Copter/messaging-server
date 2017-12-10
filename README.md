@@ -1,4 +1,4 @@
-<img src="icon.png" align="right" />
+<img src="readmeIcon.png" align="right" />
 
 # messaging-server
 
