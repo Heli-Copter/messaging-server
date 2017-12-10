@@ -1,6 +1,6 @@
 <img src="readmeIcon.png" align="right" />
 
-# messaging-server [![Awesome]
+# messaging-server
 
 Intent:  
 
